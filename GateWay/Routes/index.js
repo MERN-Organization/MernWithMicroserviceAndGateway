@@ -3,7 +3,7 @@ const express = require("express")
 const generateDynamicPath = require("../utils/generateDynamicPath")
 const router = express.Router()
 const registry = require('./registry.json')
-
+ 
 
 router.all("/:apiName/*",async (req,res,next)=>{
     // console.log("This is checking all path and paramas and more",req.params)
