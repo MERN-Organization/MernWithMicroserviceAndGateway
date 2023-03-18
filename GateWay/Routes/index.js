@@ -2,7 +2,7 @@ const { default: axios } = require("axios")
 const express = require("express")
 const generateDynamicPath = require("../utils/generateDynamicPath")
 const router = express.Router()
-const registry = require('./registry.json')
+const registry = require('./registry.json') 
  
 
 router.all("/:apiName/*",async (req,res,next)=>{
