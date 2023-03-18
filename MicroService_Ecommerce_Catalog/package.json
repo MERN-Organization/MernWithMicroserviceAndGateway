@@ -1,0 +1,20 @@
+{
+    "name": "backend",
+    "version": "1.0.0",
+    "description": "Node js Application With Simple to Complex API , Authoziation and Streams and Buffers",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "nodemon": "nodemon ./index.js",
+        "pretty": "prettier --write \"./**/*.{js,jsx,ts,tsx,json}\""
+    },
+    "author": "Parshwa Chokshi",
+    "license": "ISC",
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "mongoose": "^7.0.1",
+        "nodemon": "^2.0.21"
+    }
+}
