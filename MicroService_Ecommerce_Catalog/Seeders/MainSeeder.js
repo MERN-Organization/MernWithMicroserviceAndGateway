@@ -1,22 +1,30 @@
-const DummyUser = require('./DummyUserSeeder')
-const DummyUserModel = require('../Models/DummyUserModel')
-const connectDB = require('../DB/dbConnection')
+const ProductsSeederData = require('../Seeders/ProductSeeder');
+const DummyUsersSeederData = require('./DummyUserSeeder');
+const DummyUserModel = require('../Models/DummyUserModel');
+const ProductModel = require('../Models/Products');
+const connectDB = require('../DB/dbConnection');
 
 connectDB()
     .then(() => {
-        SeedData()
+        SeedData();
     })
     .catch((err) => {
-        console.log('Database Connection Failed')
-    })
+        console.log('Database Connection Failed');
+    });
 const SeedData = async () => {
     try {
-        await DummyUserModel.collection.dropIndexes()
-        await DummyUserModel.collection.deleteMany({})
-        await DummyUserModel.collection.insertMany(DummyUser)
-        console.log('Seeder data proceeded successfully')
+        // await DummyUserModel.collection.dropIndexes();
+        // await DummyUserModel.collection.deleteMany({});
+        // await DummyUserModel.collection.insertMany(DummyUsersSeederData);
+
+        await ProductModel.collection.dropIndexes();
+        await ProductModel.collection.deleteMany({});
+        await ProductModel.collection.insertMany(ProductsSeederData);
+
+        console.log('Seeder data proceeded successfully');
+        process.exit();
     } catch (err) {
-        console.error('Error while proccessing seeder data', error)
-        process.exit(1)
+        console.error('Error while proccessing seeder data', err);
+        process.exit(1);
     }
-}
+};

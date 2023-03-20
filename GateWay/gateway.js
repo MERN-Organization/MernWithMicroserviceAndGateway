@@ -22,4 +22,4 @@ app.use((err, req, res, next) => {
 
 app.use("/api",Routes)
 
-app.get("/registerNewService",registerNewService)
+app.post("/registerNewService",registerNewService)

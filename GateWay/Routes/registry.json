@@ -1,7 +1,11 @@
 {
-    "catalog": {
-        "apiName": "catalog",
-        "port": "3001",
-        "apiUrl": "http://localhost:3001"
+    "services": {
+        "catalog": {
+            "apiName": "catalog",
+            "port": "3001",
+            "host": "localhost",
+            "protocol": "http",
+            "apiUrl": "http://localhost:3001"
+        }
     }
 }

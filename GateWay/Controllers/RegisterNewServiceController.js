@@ -8,7 +8,7 @@ const registerNewService = async (req, res, next) => {
     try {
         const { apiName } = req.body;
 
-        registry[apiName] = { ...req.body };
+        registry.services[apiName] = { ...req.body };
 
         await fs.writeFileSync(
             './Routes/registry.json',
