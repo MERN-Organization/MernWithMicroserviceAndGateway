@@ -9,7 +9,6 @@ router.all("/:apiName/*",async (req,res,next)=>{
     // console.log("This is checking all path and paramas and more",req.params)
     const path = req.params[0].split('/');
     const dynamicPath = await generateDynamicPath(path) 
-    console.log("asdasdasdasdasdasd",typeof dynamicPath,req.method,req.body)
     try{
         if(registry[req.params.apiName]){
             axios({
