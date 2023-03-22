@@ -7,7 +7,6 @@ const {
     logInUser
 } = require('../Controllers/UserController/userController');
 const router = express.Router();
-console.log("Coming here")
 
 router.get('/', getUsers);
 router.post('/login', logInUser);
