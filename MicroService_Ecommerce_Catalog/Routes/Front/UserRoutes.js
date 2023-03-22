@@ -5,7 +5,7 @@ const {
     updateUser,
     deleteUser,
     logInUser
-} = require('../Controllers/UserController/userController');
+} = require('../../Controllers/UserController/userController');
 const router = express.Router();
 
 router.get('/', getUsers);

@@ -5,7 +5,7 @@ const connectDB = require('./DB/dbConnection')
 const cookieParser = require('cookie-parser')
 dotenv.config()
 const Port = process.env.PORT
-const apiRoutes = require('./Routes/ApiRoutes')
+const apiRoutes = require('./Routes/ApiRoutesMainEntryPoint')
 app.use(express.json());
 app.use(cookieParser());
 
