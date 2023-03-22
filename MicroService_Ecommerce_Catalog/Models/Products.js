@@ -1,4 +1,7 @@
 const mongoose = require("mongoose")
+const ReviewModel = require("../Models/Reviews")
+const SubCategoryModel = require("../Models/SubCategories")
+
 
 const productImageType = [
     {
@@ -25,18 +28,14 @@ const productPriceVariations = {
     }
 };
 
-// const productImagesVariations = {
-//     key: [String]
-// };
-
 const ProductSchema = mongoose.Schema({
     productName: {
         type: String,
         required: true
     },
-    productCategory: {
+    productSubCategory: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Category"
+        ref: SubCategoryModel
     },
     productPrice: {
         type: Number,
@@ -49,10 +48,10 @@ const ProductSchema = mongoose.Schema({
     productImages: {
         type: productImageType
     },
-    productReviews: {
+    productReviews: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Reviews'
-    },
+        ref: ReviewModel
+    }],
     productSku: {
         type: String,
         required: true

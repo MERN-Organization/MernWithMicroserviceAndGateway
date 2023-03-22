@@ -34,7 +34,11 @@ const UsersSchema = mongoose.Schema(
         DOB: {
             type: Date,
             required: true
-        }
+        },
+        userReviews: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Review" 
+        }]
     },
     {
         timestamps: true
