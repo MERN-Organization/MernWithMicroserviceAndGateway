@@ -17,4 +17,20 @@ const getAllProducts = async (req, res, next) => {
     }
 };
 
-module.exports = { getAllProducts };
+const getProductById = async (req, res, next) => {
+    try {
+        const { productId } = req.params;
+
+        const specificProduct = await ProductModel.findById(productId).orFail();
+        res.json(
+            genericFunctionTosendJsonResponse(
+                'Specific Product Fetched SuccessFully',
+                specificProduct
+            )
+        );
+    } catch (err) {
+        next(err);
+    }
+};
+
+module.exports = { getAllProducts, getProductById };

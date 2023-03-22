@@ -1,4 +1,5 @@
 const DummyUserModel = require('../../Models/DummyUserModel');
+const UserModel = require("../../Models/Users")
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const hashPassword = require('../../Utils/miscellaneous');
@@ -63,7 +64,7 @@ const updateUser = async (req, res, next) => {
 const deleteUser = async (req, res, next) => {
     const { userId } = req.params;
     try {
-        const deletedUser = await DummyUserModel.findByIdAndDelete(userId);
+        const deletedUser = await UserModel.findByIdAndDelete(userId);
         res.json({
             Message: 'User Deleted Succesfully',
             deletedUser

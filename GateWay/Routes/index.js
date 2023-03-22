@@ -17,9 +17,16 @@ router.all('/:apiName/*', async (req, res, next) => {
                 }/${dynamicPath}`,
                 // headers: req.headers,
                 data: req.body
-            }).then((responce) => {
-                res.send(responce.data);
-            });
+            })
+                .then((responce) => {
+                    res.send(responce.data);
+                })
+                .catch((err) => {
+                    console.log(
+                        'Error happend While making Request From Gateway',
+                        err
+                    );
+                });
         } else {
             res.send(
                 'No Microservice is Registered with the passed parameter name'
