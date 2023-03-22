@@ -45,5 +45,5 @@ UsersSchema.virtual('fullName').get(function () {
     return `${this.firstName} ${this.lastName}`;
 });
 
-const UserModel = mongoose.model('Users', UsersSchema);
+const UserModel = mongoose.model('User', UsersSchema);
 module.exports = UserModel;

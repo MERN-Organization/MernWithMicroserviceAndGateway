@@ -1,4 +1,4 @@
-const { default: mongoose } = require('mongoose');
+const mongoose = require("mongoose")
 
 const productImageType = [
     {
@@ -25,9 +25,9 @@ const productPriceVariations = {
     }
 };
 
-const productImagesVariations = {
-    key: [String]
-};
+// const productImagesVariations = {
+//     key: [String]
+// };
 
 const ProductSchema = mongoose.Schema({
     productName: {
@@ -36,7 +36,7 @@ const ProductSchema = mongoose.Schema({
     },
     productCategory: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Categories'
+        ref: "Category"
     },
     productPrice: {
         type: Number,
@@ -80,9 +80,9 @@ const ProductSchema = mongoose.Schema({
         type: productPriceVariations
     },
     productImagesVariantions: {
-        type: productImagesVariations
+        type: mongoose.Schema.Types.Mixed,
     }
 });
 
-const ProductModel = mongoose.model('Products', ProductSchema);
+const ProductModel = mongoose.model('Product', ProductSchema);
 module.exports = ProductModel;

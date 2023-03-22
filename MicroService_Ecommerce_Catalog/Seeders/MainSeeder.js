@@ -1,4 +1,4 @@
-const ProductsSeederData = require('../Seeders/ProductSeeder');
+const ProductsSeederData = require('./ProductSeeder');
 const DummyUsersSeederData = require('./DummyUserSeeder');
 const DummyUserModel = require('../Models/DummyUserModel');
 const ProductModel = require('../Models/Products');
@@ -13,13 +13,13 @@ connectDB()
     });
 const SeedData = async () => {
     try {
-        // await DummyUserModel.collection.dropIndexes();
-        // await DummyUserModel.collection.deleteMany({});
-        // await DummyUserModel.collection.insertMany(DummyUsersSeederData);
+        await DummyUserModel.collection.dropIndexes();
+        await DummyUserModel.collection.deleteMany({});
+        await DummyUserModel.insertMany(DummyUsersSeederData);
 
         await ProductModel.collection.dropIndexes();
         await ProductModel.collection.deleteMany({});
-        await ProductModel.collection.insertMany(ProductsSeederData);
+        await ProductModel.insertMany(ProductsSeederData);
 
         console.log('Seeder data proceeded successfully');
         process.exit();

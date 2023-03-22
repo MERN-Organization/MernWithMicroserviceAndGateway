@@ -1,13 +1,23 @@
 const mongoose = require('mongoose');
+const ObjectId = mongoose.Types.ObjectId;
 
 const ProductsSeederData = [
     {
         productName: 'American Tourister Bag',
-        productCategory: new mongoose.Types.ObjectId(),
+        productCategory: { _id: new ObjectId() },
         productPrice: 123123,
         productDescription: 'Hello Description',
-        productImages: ['image1', 'image2', 'image3'],
-        productReviews: new mongoose.Types.ObjectId(),
+        productImages: [
+            {
+                path: '/hello',
+                imageName: 'hello.jpg'
+            },
+            {
+                path: '/hello',
+                imageName: 'hello.jpg'
+            }
+        ],
+        productReviews: { _id: new ObjectId() },
         productSku: '123123123',
         productQuantity: 1,
         productAttrs: {
