@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
+const ObjectId = mongoose.Types.ObjectId;
 
-const CategorySchema = mongoose.Schema({
-    categoryName: {
-        type: String,
-        required: true
+const CategoriesSeederData = [
+    {
+        categoryName: 'Electronics'
     }
-});
+];
 
-const CategoryModel = mongoose.model('Category', CategorySchema);
-module.exports = CategoryModel;
+module.exports = CategoriesSeederData;

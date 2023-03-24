@@ -1,16 +1,11 @@
 const mongoose = require('mongoose');
-const CategoryModel = require("../Models/Categories")
+const ObjectId = mongoose.Types.ObjectId;
 
-const SubCategorySchema = mongoose.Schema({
-    subCategoryName: {
-        type: String,
-        required: true
-    },
-    primaryCategory: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: CategoryMode
+const subCategoriesSeederData = [
+    {
+        subCategoryName: 'Laptop',
+        primaryCategory: { _id: new ObjectId() },
     }
-});
+];
 
-const SubCategoryModel = mongoose.model('SubCategory', SubCategorySchema);
-module.exports = SubCategoryModel;
+module.exports = subCategoriesSeederData;
