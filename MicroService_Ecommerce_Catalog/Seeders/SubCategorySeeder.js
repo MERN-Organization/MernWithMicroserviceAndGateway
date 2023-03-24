@@ -8,7 +8,7 @@ const SubCategorySchema = mongoose.Schema({
     },
     primaryCategory: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: CategoryMode
+        ref: CategoryModel 
     }
 });
 
