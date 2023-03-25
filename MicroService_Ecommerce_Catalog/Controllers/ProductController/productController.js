@@ -27,7 +27,14 @@ const getProductById = async (req, res, next) => {
             productId
         );
 
-        const specificProduct = await ProductModel.findById(productId).orFail();
+        const specificProduct = await ProductModel.findById(productId)
+            .populate({
+                path: 'productSubCategory',
+                populate: {
+                    path: 'primaryCategory'
+                }
+            })
+            .orFail();
         specificProduct.productReviews = allReviewsForSpecificProduct;
 
         res.json(

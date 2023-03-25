@@ -1,10 +1,7 @@
-const mongoose = require('mongoose');
-const ObjectId = mongoose.Types.ObjectId;
-
 const ProductsSeederData = [
     {
         productName: 'American Tourister Bag',
-        productCategory: { _id: new ObjectId() },
+        productSubCategory: { _id: '641f3e6fb2ca2f8272e886f6' },
         productPrice: 123123,
         productDescription: 'Hello Description',
         productImages: [
