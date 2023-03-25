@@ -15,7 +15,6 @@ const getUsers = async (req, res, next) => {
 };
 
 const createUser = async (req, res, next) => {
-    console.log("asdasdasdasd")
     try {
         const { email, name, password } = req.body;
         if(email && name && password){

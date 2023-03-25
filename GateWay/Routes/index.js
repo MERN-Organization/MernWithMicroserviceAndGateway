@@ -15,7 +15,7 @@ router.all('/:apiName/*', async (req, res, next) => {
                 url: `${
                     registry.services[req.params.apiName].apiUrl
                 }/${dynamicPath}`,
-                // headers: req.headers,
+                headers: {...req.headers , isfromgateway: true },
                 data: req.body
             })
                 .then((responce) => {
