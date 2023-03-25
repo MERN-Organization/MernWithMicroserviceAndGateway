@@ -21,7 +21,7 @@ const getProductById = async (req, res, next) => {
     try {
         const { productId } = req.params;
 
-        const specificProduct = await ProductModel.findById(productId).orFail();
+        const specificProduct = await ProductModel.findById(productId).populate("productReviews").orFail();
         res.json(
             genericFunctionTosendJsonResponse(
                 'Specific Product Fetched SuccessFully',

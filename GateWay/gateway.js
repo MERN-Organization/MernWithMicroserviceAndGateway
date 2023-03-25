@@ -12,14 +12,10 @@ app.listen(Port, () => {
     console.log(`App is Listning on Port ${Port} `)
 })
 
+app.post("/registerNewService",registerNewService)
+app.use("/api",Routes)
 app.use((err, req, res, next) => {
-    res.status(500).json({
-        error: err.message,
-        stack: err.stack,
-    })
+    res.status(500).json(err.response.data)
 })
 
 
-app.use("/api",Routes)
-
-app.post("/registerNewService",registerNewService)

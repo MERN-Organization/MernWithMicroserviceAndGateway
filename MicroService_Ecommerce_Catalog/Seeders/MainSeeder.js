@@ -16,6 +16,11 @@ connectDB()
         console.log('Database Connection Failed');
     });
 const SeedData = async () => {
+    let processingString = "Processing"
+    setInterval(() => {
+        console.info(processingString)
+        processingString += "."
+    }, 20);
     try {
         await UserModel.collection.dropIndexes();
         await UserModel.collection.deleteMany({});
@@ -25,9 +30,9 @@ const SeedData = async () => {
         await ProductModel.collection.deleteMany({});
         await ProductModel.insertMany(ProductsSeederData);
 
-        await ReviewModel.collection.dropIndexes();
-        await ReviewModel.collection.deleteMany({});
-        await ReviewModel.insertMany(ReviewSeederData);
+        // await ReviewModel.collection.dropIndexes();
+        // await ReviewModel.collection.deleteMany({});
+        // await ReviewModel.insertMany(ReviewSeederData);
 
         console.log('Seeder data proceeded successfully');
         process.exit();

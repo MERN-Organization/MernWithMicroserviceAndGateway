@@ -22,10 +22,7 @@ router.all('/:apiName/*', async (req, res, next) => {
                     res.send(responce.data);
                 })
                 .catch((err) => {
-                    console.log(
-                        'Error happend While making Request From Gateway',
-                        err
-                    );
+                    next(err)
                 });
         } else {
             res.send(
