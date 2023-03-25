@@ -26,13 +26,13 @@ const SeedData = async () => {
         await UserModel.collection.deleteMany({});
         await UserModel.insertMany(UsersSeederData);
 
-        await ProductModel.collection.dropIndexes();
-        await ProductModel.collection.deleteMany({});
-        await ProductModel.insertMany(ProductsSeederData);
+        // await ProductModel.collection.dropIndexes();
+        // await ProductModel.collection.deleteMany({});
+        // await ProductModel.insertMany(ProductsSeederData);
 
-        // await ReviewModel.collection.dropIndexes();
-        // await ReviewModel.collection.deleteMany({});
-        // await ReviewModel.insertMany(ReviewSeederData);
+        await ReviewModel.collection.dropIndexes();
+        await ReviewModel.collection.deleteMany({});
+        await ReviewModel.insertMany(ReviewSeederData);
 
         console.log('Seeder data proceeded successfully');
         process.exit();

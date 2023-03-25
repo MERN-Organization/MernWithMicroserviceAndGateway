@@ -1,7 +1,5 @@
-const mongoose = require("mongoose")
-const ReviewModel = require("../Models/Reviews")
-const SubCategoryModel = require("../Models/SubCategories")
-
+const mongoose = require('mongoose');
+const SubCategoryModel = require('../Models/SubCategories');
 
 const productImageType = [
     {
@@ -45,13 +43,12 @@ const ProductSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    productReviews: {
+        type: mongoose.Schema.Types.Mixed
+    },
     productImages: {
         type: productImageType
     },
-    productReviews: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: ReviewModel
-    }],
     productSku: {
         type: String,
         required: true
@@ -79,7 +76,7 @@ const ProductSchema = mongoose.Schema({
         type: productPriceVariations
     },
     productImagesVariantions: {
-        type: mongoose.Schema.Types.Mixed,
+        type: mongoose.Schema.Types.Mixed
     }
 });
 

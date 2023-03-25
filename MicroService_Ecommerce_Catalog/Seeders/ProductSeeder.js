@@ -17,7 +17,6 @@ const ProductsSeederData = [
                 imageName: 'hello.jpg'
             }
         ],
-        productReviews: { _id: new ObjectId() },
         productSku: '123123123',
         productQuantity: 1,
         productAttrs: {

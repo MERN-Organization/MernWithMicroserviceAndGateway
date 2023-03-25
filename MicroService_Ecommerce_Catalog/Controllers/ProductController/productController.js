@@ -2,6 +2,9 @@ const ProductModel = require('../../Models/Products');
 const {
     genericFunctionTosendJsonResponse
 } = require('../../Utils/ApiResponceUtils');
+const {
+    getReviewsForSpecificProduct
+} = require('../ReviewController/reviewController');
 
 const getAllProducts = async (req, res, next) => {
     try {
@@ -20,8 +23,13 @@ const getAllProducts = async (req, res, next) => {
 const getProductById = async (req, res, next) => {
     try {
         const { productId } = req.params;
+        const allReviewsForSpecificProduct = await getReviewsForSpecificProduct(
+            productId
+        );
 
-        const specificProduct = await ProductModel.findById(productId).populate("productReviews").orFail();
+        const specificProduct = await ProductModel.findById(productId).orFail();
+        specificProduct.productReviews = allReviewsForSpecificProduct;
+
         res.json(
             genericFunctionTosendJsonResponse(
                 'Specific Product Fetched SuccessFully',
