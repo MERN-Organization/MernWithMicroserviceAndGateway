@@ -13,4 +13,9 @@ const checkIfRequestCameFromGateway = (req, res, next) => {
     }
 };
 
-module.exports = { hashPassword, checkIfRequestCameFromGateway };
+
+const checkIfRequestCameForAdmin = async(req,res,next) =>{
+             
+}
+
+module.exports = { hashPassword, checkIfRequestCameFromGateway ,checkIfRequestCameForAdmin };

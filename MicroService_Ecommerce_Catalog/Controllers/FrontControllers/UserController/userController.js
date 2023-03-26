@@ -1,8 +1,8 @@
-const DummyUserModel = require('../../Models/DummyUserModel');
-const UserModel = require("../../Models/Users")
+const DummyUserModel = require('../../../Models/DummyUserModel');
+const UserModel = require("../../../Models/Users")
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const hashPassword = require('../../Utils/miscellaneous');
+const { hashPassword } = require('../../../Utils/miscellaneous');
 
 const getUsers = async (req, res, next) => {
     try {

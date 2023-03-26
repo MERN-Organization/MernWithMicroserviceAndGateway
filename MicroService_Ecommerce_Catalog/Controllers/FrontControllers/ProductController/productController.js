@@ -1,7 +1,7 @@
-const ProductModel = require('../../Models/Products');
+const ProductModel = require('../../../Models/Products');
 const {
     genericFunctionTosendJsonResponse
-} = require('../../Utils/ApiResponceUtils');
+} = require('../../../Utils/ApiResponceUtils');
 const {
     getReviewsForSpecificProduct
 } = require('../ReviewController/reviewController');
