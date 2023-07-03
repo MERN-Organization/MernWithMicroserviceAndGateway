@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const CategoryModel = require("../Models/Categories")
+const CategoryModel = require('../Models/Categories');
 
 const SubCategorySchema = mongoose.Schema({
     subCategoryName: {

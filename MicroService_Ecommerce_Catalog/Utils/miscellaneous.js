@@ -6,16 +6,17 @@ const hashPassword = (password) => {
 };
 
 const checkIfRequestCameFromGateway = (req, res, next) => {
-    if (req.headers.isfromgateway && req.headers.host == "localhost:3000") {
+    if (req.headers.isfromgateway && req.headers.host == 'localhost:3000') {
         next();
     } else {
         res.status(500).send('Method is not Coming From Gateway');
     }
 };
 
+const checkIfRequestCameForAdmin = async (req, res, next) => {};
 
-const checkIfRequestCameForAdmin = async(req,res,next) =>{
-             
-}
-
-module.exports = { hashPassword, checkIfRequestCameFromGateway ,checkIfRequestCameForAdmin };
+module.exports = {
+    hashPassword,
+    checkIfRequestCameFromGateway,
+    checkIfRequestCameForAdmin
+};

@@ -1,5 +1,5 @@
-const randomFunction = async(req,res,next) =>{
-    res.send("I Am here")
-}
+const randomFunction = async (req, res, next) => {
+    res.send('I Am here');
+};
 
-module.exports =  randomFunction
+module.exports = randomFunction;

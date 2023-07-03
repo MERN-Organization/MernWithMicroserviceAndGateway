@@ -35,10 +35,12 @@ const UsersSchema = mongoose.Schema(
             type: Date,
             required: true
         },
-        userReviews: [{
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Review" 
-        }]
+        userReviews: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Review'
+            }
+        ]
     },
     {
         timestamps: true
