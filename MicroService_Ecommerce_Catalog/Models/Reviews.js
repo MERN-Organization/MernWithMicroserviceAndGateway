@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const ProductModel = require("../Models/Products")
-const UserModel = require("../Models/Users")
+const ProductModel = require('../Models/Products');
+const UserModel = require('../Models/Users');
 
 const ReviewSchema = mongoose.Schema({
     comment: {
@@ -16,7 +16,7 @@ const ReviewSchema = mongoose.Schema({
     },
     productId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Product"
+        ref: 'Product'
     }
 });
 

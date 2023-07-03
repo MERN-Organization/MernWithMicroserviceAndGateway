@@ -5,5 +5,4 @@ const SubCategorySeederData = [
     }
 ];
 
-module.exports =  SubCategorySeederData
- 
+module.exports = SubCategorySeederData;

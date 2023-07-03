@@ -1,5 +1,5 @@
 const DummyUserModel = require('../../../Models/DummyUserModel');
-const UserModel = require("../../../Models/Users")
+const UserModel = require('../../../Models/Users');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { hashPassword } = require('../../../Utils/miscellaneous');
@@ -17,24 +17,22 @@ const getUsers = async (req, res, next) => {
 const createUser = async (req, res, next) => {
     try {
         const { email, name, password } = req.body;
-        if(email && name && password){
+        if (email && name && password) {
             const hashedPassword = hashPassword(password);
             const newUser = new DummyUserModel({
                 email,
                 name,
                 password: hashedPassword
             });
-    
+
             await newUser.save();
             res.status(201).json({
                 Message: 'New User Created SuccessFully',
                 newUser
-            }); 
+            });
+        } else {
+            res.status(404).send('Please Provide Details');
         }
-        else{
-            res.status(404).send("Please Provide Details")
-        }
-  
     } catch (err) {
         next(err);
     }

@@ -12,7 +12,7 @@ const getReviewsForSpecificProduct = async (productId) => {
         }).orFail();
         return allReviewsBySpecificProduct;
     } catch (err) {
-        return []
+        return [];
     }
 };
 
